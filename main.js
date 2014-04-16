@@ -2,10 +2,11 @@
 /*global $, require, L, window*/
 
 require([
-    'tmp-lines',
-    'tmp-heatmap'
-], function (tmpLayer, tmpheatmap) {
+    // 'tmp-lines',
+    // 'tmp-heatmap'
+], function () { // tmpLayer, tmpheatmap
 
+    // -43.527, 172.64 = chch
     var map = L.map('map').setView([-43.527, 172.64], 13);
     var googleTiles = new L.Google();
     var osmTiles = new L.TileLayer('http://{s}.tile.cloudmade.com/884b2cab686b4b29950f2b8a151ceced/106694/256/{z}/{x}/{y}.png', {
@@ -18,13 +19,13 @@ require([
         'Street Map': osmTiles,
         'Satellite': googleTiles
     };
-    var dataLayers = {
-        'Restrictions': tmpLayer
-    };
+    var dataLayers = {};
 
-    if (tmpheatmap !== null) {
-        dataLayers['Restrictions Heatmap'] = tmpheatmap;
-    }
+    // var dataLayers['Restrictions'] = tmpLayer;
+
+    // if (tmpheatmap !== null) {
+    //     dataLayers['Restrictions Heatmap'] = tmpheatmap;
+    // }
 
 
     //Called when an item in the layer control box is ticked
